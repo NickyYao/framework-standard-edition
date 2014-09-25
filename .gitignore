@@ -1,20 +1,14 @@
-# Cache and logs (Symfony2)
+###### Cache and logs (Symfony) #####
 /app/cache/*
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
-# Cache and logs (Symfony3)
-/var/cache/*
-/var/logs/*
-!var/cache/.gitkeep
-!var/logs/.gitkeep
-
-# Parameters
+##### Configuration files (Parameters) #####
 /app/config/parameters.yml
 /app/config/parameters.ini
 
-# Managed by Composer
+##### Managed by Composer #####
 /app/bootstrap.php.cache
 /var/bootstrap.php.cache
 /bin/*
@@ -22,13 +16,25 @@
 !bin/symfony_requirements
 /vendor/
 
-# Assets and user uploads
+##### Assets and user uploads #####
 /web/bundles/
 /web/uploads/
 
-# PHPUnit
+##### PHPUnit #####
 /app/phpunit.xml
 /phpunit.xml
 
-# Composer PHAR
+##### Composer PHAR #####
 /composer.phar
+/composer.lock
+
+########## Workspace ##########
+/data/translations/
+/compass/.sass-cache/
+
+########## Mac developer ##########
+.DS_Store
+
+########## Project Add ##########
+.idea/
+########## End Project Add ##########
