@@ -1,0 +1,23 @@
+wiz_admintools:
+    resource: "@WizAdmintoolsBundle/Resources/config/routing.yml"
+    prefix:   /admintools
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix:   /admintools
+
+wiz_user:
+    resource: "@WizUserBundle/Resources/config/routing.yml"
+    prefix:   /admintools
+
+elfinder:
+    resource: "@FMElfinderBundle/Resources/config/routing.yml"
+    prefix:   /admintools
+
+upload_file:
+    resource: "@WizToolsBundle/Resources/config/upload_file.yml"
+    prefix:   /admintools
+
+_imagine:
+    resource: .
+    type:     imagine

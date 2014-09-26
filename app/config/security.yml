@@ -1,12 +1,28 @@
 security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    role_hierarchy:
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
     providers:
-        in_memory:
-            memory: ~
+        fos_userbundle:
+            id: fos_user.user_provider.username
 
     firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+                default_target_path: /admintools
+                login_path: /admintools/login
+                check_path: /admintools/login_check
+            logout:
+                path:    /admintools/logout
+                target:  /admintools/login
+            anonymous: true
 
-        default:
-            anonymous: ~
+    access_control:
+        - { path: ^/admintools/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admintools/, role: ROLE_ADMIN }
